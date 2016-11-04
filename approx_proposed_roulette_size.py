@@ -5,16 +5,11 @@ import math
 import pylab
 import bisect
 import operator
-from shutil import copyfile
 from sklearn.metrics import confusion_matrix,roc_auc_score
 from sklearn import linear_model,cross_validation,preprocessing
 from sklearn.feature_selection import chi2
 from sklearn import preprocessing
 from sklearn import linear_model
-import scipy.stats as stats
-import matplotlib.mlab as mlab
-import matplotlib.pyplot as plt
-#import statsmodels.api as sm
 from multiprocessing import Pool, Value
 from ctypes import c_int
 import time
