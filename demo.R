@@ -1,6 +1,14 @@
 #Demo script to assign score to each miRNA##
 #Debajyoti Sinha#########01 November 2016###
 ############################################
+
+list.of.packages2 <- c("glmnet","ROCR", "caret", "survival", "reshape2", "ggplot2")
+new.packages <- list.of.packages2[!(list.of.packages2 %in% installed.packages()[,"Package"])]
+if(length(new.packages)) {
+  install.packages(list.of.packages2)
+}
+
+
 #Define Working Directory
 setwd("ParSel-master/sc")
 dir.create(file.path(getwd(), "../plot/"), showWarnings = FALSE)
