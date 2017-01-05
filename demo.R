@@ -2,7 +2,9 @@
 #Debajyoti Sinha#########01 November 2016###
 ############################################
 #Define Working Directory
-setwd("ParSel/sc")
+setwd("ParSel-master/sc")
+dir.create(file.path(getwd(), "../plot/"), showWarnings = FALSE)
+dir.create(file.path(getwd(), "../output/"), showWarnings = FALSE)
 
 #Define Cores to Use
 usecores = 4
@@ -60,6 +62,9 @@ for(n in 1:ntimes){
   
   train<-t(datat[c(splits[[n]]),])
   test<-t(datat[c(setdiff(1:nsamples,splits[[n]])),])
+  
+  write.csv(train,file="../output/train.csv",row.names=FALSE, quote=FALSE)
+  write.csv(test,file="../output/test.csv",row.names=FALSE, quote=FALSE)
   
   cat("\nBootstrap Set ",n,"...\n")
 
